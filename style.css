@@ -1,0 +1,1528 @@
+/*
+Theme Name: Glendon ITS SPARK Child Makeover
+Theme URI: http://spark.library.yorku.ca/
+Description: Separate makeover copy of the Bootstrap 5 SPARK child theme, retaining the existing homepage, logo, and three learning pillars.
+Author: York University
+Template: glendonits-spark-20151125
+Version: 1.0.0
+Text Domain: glendonits-spark-child-makeover
+*/
+
+/*
+ * The homepage, site map, and migrated module pages use a child-local
+ * Bootstrap 5 build. Other pages inherit the parent's Bootstrap 3 assets.
+ */
+
+body {
+  font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
+}
+
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6,
+body button,
+body input,
+body select,
+body textarea {
+  font-family: inherit;
+}
+
+.spark-child-home {
+  --spark-york-red: #e31837;
+  --spark-york-dark-red: #810001;
+  --spark-york-text: #212529;
+  --spark-york-muted: #f8f9fa;
+
+  /*
+   * Bootstrap 5.3 color utilities use these runtime variables. Keep them
+   * scoped to the child homepage so the inherited Bootstrap 3 pages are
+   * unaffected.
+   */
+  --bs-primary: #e31837;
+  --bs-primary-rgb: 227, 24, 55;
+  --bs-primary-text-emphasis: #810001;
+  --bs-primary-bg-subtle: #fce7ea;
+  --bs-primary-border-subtle: #f5b0ba;
+  --bs-secondary: #6c757d;
+  --bs-secondary-rgb: 108, 117, 125;
+  --bs-secondary-text-emphasis: #2b2f32;
+  --bs-secondary-bg-subtle: #e2e3e5;
+  --bs-secondary-border-subtle: #c4c8cb;
+  --bs-success: #28a745;
+  --bs-success-rgb: 40, 167, 69;
+  --bs-success-text-emphasis: #155724;
+  --bs-success-bg-subtle: #d4edda;
+  --bs-success-border-subtle: #c3e6cb;
+  --bs-info: #17a2b8;
+  --bs-info-rgb: 23, 162, 184;
+  --bs-info-text-emphasis: #0c5460;
+  --bs-info-bg-subtle: #d1ecf1;
+  --bs-info-border-subtle: #bee5eb;
+  --bs-warning: #ffc107;
+  --bs-warning-rgb: 255, 193, 7;
+  --bs-warning-text-emphasis: #856404;
+  --bs-warning-bg-subtle: #fff3cd;
+  --bs-warning-border-subtle: #ffeeba;
+  --bs-danger: #dc3545;
+  --bs-danger-rgb: 220, 53, 69;
+  --bs-danger-text-emphasis: #721c24;
+  --bs-danger-bg-subtle: #f8d7da;
+  --bs-danger-border-subtle: #f5c6cb;
+  --bs-light: #f8f9fa;
+  --bs-light-rgb: 248, 249, 250;
+  --bs-light-text-emphasis: #495057;
+  --bs-light-bg-subtle: #fcfcfd;
+  --bs-light-border-subtle: #e9ecef;
+  --bs-dark: #212529;
+  --bs-dark-rgb: 33, 37, 41;
+  --bs-dark-text-emphasis: #1a1d20;
+  --bs-dark-bg-subtle: #ced4da;
+  --bs-dark-border-subtle: #adb5bd;
+
+  --bs-link-color: var(--bs-primary);
+  --bs-link-color-rgb: 227, 24, 55;
+  --bs-link-hover-color: #c0142f;
+  --bs-link-hover-color-rgb: 192, 20, 47;
+}
+
+.spark-child-home .btn-primary {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: var(--bs-primary);
+  --bs-btn-border-color: var(--bs-primary);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #c0142f;
+  --bs-btn-hover-border-color: #b5132c;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #b5132c;
+  --bs-btn-active-border-color: #a91229;
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: var(--bs-primary);
+  --bs-btn-disabled-border-color: var(--bs-primary);
+  --bs-btn-focus-shadow-rgb: 227, 24, 55;
+}
+
+.spark-child-page {
+  --spark-york-red: #e31837;
+  --spark-york-dark-red: #810001;
+  --bs-primary: #e31837;
+  --bs-primary-rgb: 227, 24, 55;
+  --bs-primary-text-emphasis: #810001;
+  --bs-primary-bg-subtle: #fce7ea;
+  --bs-primary-border-subtle: #f5b0ba;
+  --bs-link-color: #e31837;
+  --bs-link-color-rgb: 227, 24, 55;
+  --bs-link-hover-color: #c0142f;
+  --bs-link-hover-color-rgb: 192, 20, 47;
+}
+
+.spark-child-page .spark-york-tools .btn-primary {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: var(--bs-primary);
+  --bs-btn-border-color: var(--bs-primary);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #c0142f;
+  --bs-btn-hover-border-color: #b5132c;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #b5132c;
+  --bs-btn-active-border-color: #a91229;
+  --bs-btn-focus-shadow-rgb: 227, 24, 55;
+}
+
+.spark-homepage {
+  color: var(--spark-york-text);
+  line-height: 1.6;
+}
+
+.spark-homepage-content {
+  padding-inline: 10px;
+}
+
+.spark-skip-link {
+  position: absolute;
+  z-index: 1100;
+  top: 0.5rem;
+  left: -10000px;
+  padding: 0.75rem 1rem;
+  background: #fff;
+  color: var(--spark-york-text);
+}
+
+.spark-skip-link:focus {
+  left: 0.5rem;
+}
+
+.spark-york-branding {
+  background: #fff;
+}
+
+.spark-york-logo {
+  display: inline-block;
+  max-width: 100%;
+}
+
+.spark-york-logo img {
+  display: block;
+  width: 140px;
+  max-width: 100%;
+  height: auto;
+}
+
+.spark-york-tools {
+  width: min(100%, 36rem);
+}
+
+.spark-york-tools .dropdown {
+  min-width: 10rem;
+}
+
+.spark-york-search {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.spark-york-search .form-control {
+  min-width: 0;
+}
+
+.spark-york-search .btn-primary,
+.spark-homepage .btn-primary {
+  --bs-btn-bg: var(--spark-york-red);
+  --bs-btn-border-color: var(--spark-york-red);
+  --bs-btn-hover-bg: #c0142f;
+  --bs-btn-hover-border-color: #b5132c;
+  --bs-btn-active-bg: #b5132c;
+  --bs-btn-active-border-color: #a91229;
+}
+
+.spark-homepage .btn-outline-primary {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #252544;
+  --bs-btn-border-color: #252544;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #343462;
+  --bs-btn-hover-border-color: #343462;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #343462;
+  --bs-btn-active-border-color: #343462;
+  background-image: -webkit-linear-gradient(top, #252544, #343462);
+  background-image: linear-gradient(to bottom, #252544, #343462);
+}
+
+.spark-york-navigation {
+  /* background: var(--spark-york-red); */
+  background: var(--bs-dark);
+}
+
+.spark-york-navigation .navbar-nav {
+  gap: 0.25rem;
+}
+
+.spark-york-navigation .nav-link {
+  padding: 0.8rem 1rem;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.spark-york-navigation .nav-link:hover,
+.spark-york-navigation .nav-link:focus-visible {
+  background: #c0142f;
+  color: #fff;
+  text-decoration: underline;
+}
+
+.spark-homepage-logo {
+  max-width: 100%;
+  height: auto;
+}
+
+.spark-homepage a:focus-visible,
+.spark-york-header a:focus-visible,
+.spark-york-header button:focus-visible,
+.spark-york-header input:focus-visible {
+  outline: 3px solid #005ea8;
+  outline-offset: 3px;
+  text-decoration: underline;
+}
+
+.spark-module-page {
+  color: #212529;
+  line-height: 1.6;
+}
+
+@media (min-width: 1200px) {
+  .spark-module-page.container {
+    width: calc(100% - 3rem);
+    max-width: 1440px;
+  }
+}
+
+.spark-module-sidebar,
+.spark-module-main {
+  min-width: 0;
+}
+
+.spark-module-york-header {
+  background: #fafafa;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  /* border-bottom: 2px solid var(--bs-dark); */
+  /* margin-bottom: 1rem; */
+}
+
+.spark-module-york-header .spark-york-tools {
+  width: min(100%, 36rem);
+}
+
+.spark-module-york-header .spark-york-tools .dropdown {
+  min-width: 10rem;
+}
+
+.spark-module-york-header .spark-york-search {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.spark-module-york-header .spark-york-search .form-control {
+  min-width: 0;
+}
+
+.spark-module-york-header .spark-york-search .btn-primary {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: var(--bs-primary);
+  --bs-btn-border-color: var(--bs-primary);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #c0142f;
+  --bs-btn-hover-border-color: #b5132c;
+}
+
+@media (min-width: 992px) {
+  .spark-module-sidebar {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+
+  .spark-module-main {
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
+}
+
+.spark-module-logo {
+  display: inline-block;
+  max-width: 46rem;
+}
+
+.spark-module-logo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.spark-module-language-switch {
+  flex: 0 0 auto;
+}
+
+.spark-module-home-link {
+  padding-bottom: 0.55rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.spark-module-home-link a {
+  color: #333367;
+  text-decoration: underline;
+}
+
+.spark-module-home-link a:hover,
+.spark-module-home-link a:focus-visible {
+  color: #810001;
+}
+
+.spark-module-branding {
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.spark-module-breadcrumbs {
+  margin-bottom: 1.5rem;
+  color: #495057;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.spark-module-breadcrumbs a {
+  color: #810001;
+  text-underline-offset: 0.2em;
+}
+
+.spark-module-navigation {
+  overflow: visible;
+  border: 1px solid #dee2e6;
+  border-radius: 0.5rem;
+  background: #fff;
+}
+
+.spark-module-stage-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1.25rem;
+  border-radius: 0.45rem 0.45rem 0 0;
+  background: linear-gradient(150deg, #c0142f 0%, #a91229 100%);
+  color: #fff;
+}
+
+.spark-module-stage-heading h2 {
+  margin: 0;
+  color: inherit;
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 1.35;
+  text-transform: none;
+}
+
+.spark-module-stage-heading > .fa {
+  flex: 0 0 auto;
+  margin-top: 0.15rem;
+  font-size: 1.4rem;
+}
+
+.spark-module-menu-mobile-toggle {
+  margin-bottom: 0.75rem;
+  border-color: #c0142f;
+  background: #fff;
+  color: #810001;
+  padding: 0.75rem 1rem;
+}
+
+.spark-module-menu-mobile-toggle:hover,
+.spark-module-menu-mobile-toggle:active {
+  border-color: #a91229;
+  background: #fff2f4;
+  color: #810001;
+}
+
+.spark-module-menu-mobile-toggle:focus-visible {
+  outline: 3px solid #005ea8;
+  outline-offset: 3px;
+}
+
+@media (min-width: 992px) {
+  .spark-module-navigation.collapse:not(.show) {
+    display: block;
+  }
+}
+
+.spark-module-menu,
+.spark-module-menu .sub-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.spark-module-menu > .menu-item {
+  display: block;
+  position: static;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid #e9ecef;
+  background: #fff;
+}
+
+.spark-module-menu > .menu-item:last-child {
+  border-bottom: 0;
+  border-radius: 0 0 0.45rem 0.45rem;
+}
+
+.spark-module-menu .menu-item > a {
+  display: block;
+  min-width: 0;
+  min-height: 44px;
+  padding: 0.85rem 1.1rem;
+  color: #212529;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.spark-module-menu > .menu-item > a,
+.spark-module-menu .menu-item-has-children > a {
+  font-weight: 600;
+}
+
+.spark-module-menu > .menu-top-module-spaced-out > a {
+  margin-top: 0;
+  padding: 0.85rem 1.1rem !important;
+}
+
+.spark-module-menu .menu-item > a:hover,
+.spark-module-menu .menu-item > a:focus-visible {
+  background: #fff2f4;
+  color: #810001;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.spark-module-menu .sub-menu {
+  background: #eaeaea;
+}
+
+.spark-module-menu:not(.spark-module-menu-enhanced) .sub-menu,
+.spark-module-menu-enhanced .sub-menu:not([hidden]) {
+  display: block;
+  position: static;
+  float: none;
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+  margin: 0;
+}
+
+.spark-module-menu-enhanced .sub-menu[hidden] {
+  display: none !important;
+}
+
+.spark-module-menu .sub-menu > .menu-item {
+  display: block;
+  position: static;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+
+.spark-module-menu .sub-menu .menu-item > a {
+  padding: 0.75rem 1rem 0.75rem 1.5rem;
+  color: #495057;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.spark-module-menu .sub-menu .sub-menu > .menu-item > a {
+  padding-left: 2rem;
+}
+
+.spark-module-menu .menu-item > a[aria-current="page"] {
+  background: #fff2f4;
+  box-shadow: inset 3px 0 #a91229;
+  color: #810001;
+  font-weight: 600;
+}
+
+.spark-module-menu-item {
+  display: flex !important;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.spark-module-menu-item > a {
+  flex: 1 1 0;
+}
+
+.spark-module-menu-toggle {
+  position: relative;
+  flex: 0 0 2.75rem;
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #810001;
+  cursor: pointer;
+}
+
+.spark-module-menu-toggle:hover {
+  background: #fff2f4;
+}
+
+.spark-module-menu-toggle::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  content: "";
+  transform: translate(-65%, -75%) rotate(45deg);
+}
+
+.spark-module-menu-toggle[aria-expanded="true"]::before {
+  transform: translate(-35%, -25%) rotate(225deg);
+}
+
+.spark-module-menu-toggle:focus-visible {
+  position: relative;
+  z-index: 1;
+  outline: 3px solid #005ea8;
+  outline-offset: -4px;
+}
+
+.spark-module-menu-item > .sub-menu {
+  flex: 0 0 100%;
+  order: 1;
+}
+
+.spark-module-content {
+  min-width: 0;
+  color: #212529;
+  font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+.spark-module-content h1 {
+  margin: 0 0 1.5rem;
+  color: #212529;
+  font-family: inherit;
+  font-size: clamp(1.8rem, 3vw, 2.35rem);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.spark-module-content h2,
+.spark-module-content h3,
+.spark-module-content h4 {
+  margin-top: 1.75rem;
+  margin-bottom: 0.75rem;
+  color: #212529;
+  line-height: 1.35;
+  text-transform: none;
+}
+
+.spark-module-lesson-body {
+  display: flow-root;
+}
+
+.spark-module-lesson-body p {
+  margin-bottom: 1.1rem;
+}
+
+.spark-module-lesson-body li + li {
+  margin-top: 0.35rem;
+}
+
+.spark-module-content p a,
+.spark-module-resources a {
+  color: #a91229;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.spark-module-content .spark-module-position {
+  margin: 0 0 0.5rem;
+  color: #495057;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.spark-module-content .accordion {
+  clear: both;
+}
+
+.spark-module-resources {
+  float: none;
+  width: 100%;
+  max-width: none;
+  margin: 2rem 0 0;
+  padding: 1.25rem 1.5rem;
+  overflow: visible;
+  border: 1px solid #e9ecef;
+  border-radius: 0.5rem;
+  background: #f8f9fa;
+  color: #212529;
+}
+
+.spark-module-resources .card-header {
+  margin: 0 0 0.5rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #212529;
+  font-size: 1.15rem;
+  font-weight: 600;
+  text-transform: none;
+}
+
+.spark-module-resources .list-group,
+.spark-module-resources .list-group-item {
+  border: 0;
+  background: transparent;
+  color: #212529;
+}
+
+.spark-module-resources .list-group-item {
+  padding: 0.55rem 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.spark-module-resources a {
+  display: block;
+}
+
+.spark-module-content img,
+.spark-module-content video,
+.spark-module-content iframe {
+  max-width: 100%;
+}
+
+.spark-module-content .alignleft {
+  margin: 0 1rem 1rem 0;
+}
+
+.spark-module-content .alignright {
+  margin: 0 0 1rem 1rem;
+}
+
+.spark-module-content table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.spark-module-content .content-gloss-term {
+  color: #333367;
+  cursor: help;
+  font-weight: 700;
+}
+
+.spark-module-content .content-gloss-pop {
+  max-width: calc(100vw - 2rem);
+  z-index: 1060;
+}
+
+.spark-module-video .video-content-lr {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  min-height: 0;
+}
+
+.spark-module-video .video-content-lr .video-player-container {
+  flex: 1 1 100%;
+  width: 100%;
+  max-width: 475px;
+  height: auto;
+  aspect-ratio: 475 / 338;
+  margin: 0;
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.spark-module-video .video-content-lr .video-player {
+  width: calc(100% - 2rem);
+  height: auto;
+  aspect-ratio: 428 / 262;
+  margin: 7% auto 0;
+}
+
+.spark-module-video .video-content-lr .video-player video {
+  width: 100%;
+  height: auto;
+}
+
+.spark-module-video .video-content-lr .video-alt-controls-container {
+  display: flex;
+  width: auto;
+  height: auto;
+  float: none;
+  gap: 1rem;
+  margin: 0;
+}
+
+.spark-module-video .video-content-lr .video-mac-view,
+.spark-module-video .video-content-lr .video-mac-view-fr,
+.spark-module-video .video-content-lr .video-transcript-pop,
+.spark-module-video .video-content-lr .video-transcript-pop-fr {
+  flex: 0 0 auto;
+  margin: 0;
+}
+
+.spark-module-page-controls {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #dee2e6;
+}
+
+.spark-module-page-controls .content-bottom-navigation-page-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  height: auto;
+  float: none;
+  gap: 0.75rem;
+}
+
+.spark-module-page-controls .content-bottom-navigation-page-controls > a {
+  display: inline-flex;
+  flex: 1 1 16rem;
+  align-items: center;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  width: auto;
+  max-width: 100%;
+  min-width: 0;
+  height: auto;
+  min-height: 3.25rem;
+  float: none;
+  padding: 0.75rem 1.25rem;
+  border: 1px solid #dee2e6;
+  border-radius: 0.375rem;
+  background: #fff;
+  color: #212529;
+  gap: 0.4rem;
+  white-space: normal;
+  text-decoration: none;
+  transition: background-color 150ms ease, color 150ms ease;
+  font-size: 1.1rem;
+}
+
+.spark-module-page-controls .content-bottom-navigation-page-controls > .content-bottom-back-button {
+  flex-direction: row;
+}
+
+.spark-module-page-controls .content-bottom-navigation-page-controls > .content-bottom-next-button {
+  flex-direction: row-reverse;
+}
+
+.spark-module-page-controls .content-bottom-navigation-page-controls > .content-bottom-home-button {
+  flex-direction: row;
+}
+
+.spark-page-control-icon {
+  display: block;
+  flex: 0 0 1.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+
+.spark-page-control-icon-home {
+  fill: currentColor;
+  stroke: none;
+}
+
+.spark-module-page-controls .content-bottom-navigation-page-controls > a > span {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.spark-module-page-controls .content-bottom-navigation-page-controls > a:hover,
+.spark-module-page-controls .content-bottom-navigation-page-controls > a:focus-visible,
+.spark-module-page-controls .content-bottom-navigation-page-controls > a:active {
+  border-color: #c0142f;
+  background: #fff2f4;
+  color: #810001;
+  text-decoration: underline;
+}
+
+.spark-module-page-controls .content-bottom-navigation-page-controls > a:focus-visible {
+  outline: 3px solid #005ea8;
+  outline-offset: 3px;
+}
+
+.spark-module-page-controls .spark-nav-copy {
+  flex: 1 1 auto;
+  min-width: 0;
+  text-align: left;
+}
+
+.spark-module-page-controls .spark-nav-direction,
+.spark-module-page-controls .spark-nav-title {
+  display: block;
+  line-height: 1.45;
+}
+
+.spark-module-page-controls .spark-nav-direction {
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.spark-module-page-controls .spark-nav-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.spark-module-page-controls .content-bottom-navigation-page-controls > .content-bottom-next-button {
+  border-color: #c0142f;
+  background: #c0142f;
+  color: #fff;
+}
+
+.spark-module-page-controls .content-bottom-next-button .spark-nav-copy {
+  text-align: right;
+}
+
+.spark-module-page-controls .content-bottom-navigation-page-controls > .content-bottom-next-button:hover,
+.spark-module-page-controls .content-bottom-navigation-page-controls > .content-bottom-next-button:focus-visible {
+  border-color: #a91229;
+  background: #a91229;
+  color: #fff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spark-module-page-controls .content-bottom-navigation-page-controls > a {
+    transition: none;
+  }
+}
+
+.spark-module-page-controls .content-bottom-navigation-page-controls > .content-bottom-back-button-x {
+  display: none;
+}
+
+.spark-module-page-controls .content-bottom-navigation-page-controls > a:only-of-type {
+  margin-left: auto;
+}
+
+.spark-module-page .dark-blanket {
+  display: none;
+  position: fixed;
+  z-index: 900;
+  inset: 0;
+  background: rgb(0 0 0 / 55%);
+}
+
+.spark-primary-menu,
+.spark-primary-menu .sub-menu,
+.spark-link-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.spark-primary-menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr));
+  grid-auto-rows: max-content;
+  align-items: start;
+  gap: 0.6rem;
+}
+
+.spark-primary-menu > .menu-item {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #dee2e6;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 0.15rem 0.45rem rgb(33 37 41 / 10%);
+}
+
+.spark-primary-menu-toggle {
+  display: block;
+  width: 100%;
+  padding: 10%;
+  border: 0;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #960101, #c80303);
+  color: #fff;
+  cursor: pointer;
+  font-size: clamp(1.15rem, 2vw, 2rem);
+  font-weight: 700;
+  line-height: 1.25;
+  text-align: left;
+}
+
+.spark-primary-menu-toggle[aria-expanded="true"] {
+  border-radius: 10px 10px 0 0;
+}
+
+.spark-primary-menu-toggle:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.spark-primary-menu-toggle:focus-visible {
+  outline: 3px solid #fff !important;
+  outline-offset: -5px !important;
+}
+
+.spark-primary-menu-indicator {
+  float: right;
+  margin-left: 1rem;
+  font-weight: 400;
+}
+
+.spark-primary-menu-toggle:hover,
+.spark-primary-menu-toggle[aria-expanded="true"] {
+  background: linear-gradient(180deg, #4e0001, #810001);
+}
+
+.spark-primary-menu .sub-menu {
+  padding: 0.5rem 1rem 1rem;
+  border-radius: 0 0 9px 9px;
+  background: var(--spark-york-muted);
+}
+
+.spark-primary-menu .sub-menu li + li {
+  border-top: 1px solid #dee2e6;
+}
+
+.spark-primary-menu .sub-menu a {
+  display: block;
+  padding: 0.65rem 0;
+  color: var(--spark-york-text);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.spark-primary-menu .sub-menu li:last-child a {
+  border-bottom-right-radius: 9px;
+  border-bottom-left-radius: 9px;
+  background: var(--spark-york-muted);
+}
+
+.spark-homepage-links-primary {
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+  border-top: 1px solid #d5d5d5;
+  background: transparent;
+}
+
+.spark-link-menu {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 0.5rem 1.25rem;
+}
+
+.spark-link-menu a {
+  display: block;
+  height: 100%;
+  padding: 0.65rem 0.85rem;
+  border: 0;
+  border-radius: 0.35rem;
+  background: var(--spark-york-dark-red);
+  color: #fff;
+  font-weight: 500;
+  line-height: 1.25;
+  text-decoration: none;
+}
+
+.spark-link-menu a:hover {
+  background: #4e0001;
+  color: #fff;
+}
+
+.spark-learning-commons {
+  color: var(--spark-york-text);
+}
+
+.spark-link-menu-secondary a {
+  height: auto;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--spark-york-text);
+  font-size: 0.875rem;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.spark-link-menu-secondary a:hover {
+  background: transparent;
+  color: var(--spark-york-dark-red);
+}
+
+.spark-learning-commons {
+  display: inline-block;
+  line-height: 0;
+}
+
+.spark-learning-commons img {
+  display: block;
+  width: 117px;
+  max-width: 100%;
+  height: auto;
+}
+
+.spark-homepage-links-secondary .spark-link-menu {
+  align-items: center;
+  gap: 0;
+}
+
+.spark-homepage-links-secondary .spark-link-menu > li + li {
+  margin-left: 0.5rem;
+  padding-left: 0.5rem;
+  border-left: 1px solid #adb5bd;
+}
+
+.spark-homepage-media iframe,
+.spark-homepage-media video,
+.spark-homepage-media img {
+  max-width: 100%;
+}
+
+.spark-homepage-media .video-player-container {
+  float: none;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  margin: 0;
+  background-size: cover;
+}
+
+.spark-homepage-media video,
+.spark-homepage-media iframe {
+  width: 100%;
+  height: auto;
+}
+
+.spark-homepage-license {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 0.75rem 1rem;
+  font-size: 0.9rem;
+}
+
+.spark-homepage-license p {
+  flex: 1 1 20rem;
+  margin: 0;
+}
+
+.spark-york-footer {
+  color: #fff;
+}
+
+.spark-york-footer-content {
+  background-image: url("../york2020/images/arrow.png");
+  background-repeat: no-repeat;
+  background-position: right 0 bottom -25px;
+}
+
+.spark-york-footer a {
+  text-decoration: underline;
+}
+
+.spark-york-footer a:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}
+
+.spark-york-footer-logo {
+  display: block;
+  width: 100%;
+  max-width: 240px;
+  height: auto;
+}
+
+.spark-license-badge {
+  width: 88px;
+  height: 31px;
+}
+
+.spark-site-map-logo {
+  display: inline-block;
+  max-width: 46rem;
+}
+
+.spark-site-map-logo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.spark-sitemap-content > div {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+  align-items: start;
+  gap: 1rem;
+  margin: 0 0 2rem !important;
+  padding: 1.25rem;
+  border: 1px solid #dee2e6;
+  border-top: 4px solid #e31837;
+  border-radius: 0.5rem;
+  background: #fff;
+  box-shadow: 0 0.15rem 0.45rem rgb(33 37 41 / 8%);
+}
+
+.spark-sitemap-content > div > h2 {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #dee2e6;
+  color: #212529;
+  font-size: clamp(1.5rem, 2.5vw, 2rem) !important;
+  font-weight: 700;
+  text-transform: none;
+}
+
+.spark-sitemap-content > div > div,
+.spark-sitemap-content > div > div > div:not(:has(> h3)) {
+  display: contents;
+}
+
+.spark-sitemap-content div:has(> h3) {
+  min-width: 0;
+  width: auto !important;
+  margin: 0;
+  padding: 1rem;
+  border: 1px solid #dee2e6;
+  border-radius: 0.375rem;
+  background: #f8f9fa;
+}
+
+.spark-sitemap-content div:empty {
+  display: none;
+}
+
+.spark-sitemap-content h3 {
+  margin: 0 0 0.75rem;
+  color: #343a40;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.spark-sitemap-content ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.spark-sitemap-content li {
+  margin: 0;
+  padding: 0.35rem 0;
+  line-height: 1.4;
+}
+
+.spark-sitemap-content li + li {
+  border-top: 1px solid #e2e3e5;
+}
+
+.spark-sitemap-content li ul {
+  margin-top: 0.25rem;
+}
+
+.spark-sitemap-content a {
+  color: #333566;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.spark-sitemap-content a:hover {
+  color: #810001;
+}
+
+.spark-sitemap-content a:focus-visible {
+  outline: 3px solid #e31837;
+  outline-offset: 2px;
+}
+
+@media (max-width: 575.98px) {
+  .spark-york-tools {
+    width: 100%;
+  }
+
+  .spark-york-tools .dropdown {
+    width: 100%;
+  }
+
+  .spark-york-search {
+    width: 100%;
+  }
+}
+
+/* Makeover homepage: editable introduction and three visible learning pillars. */
+.spark-homepage-header {
+  padding-block: 0.5rem 1rem;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.spark-homepage-intro {
+  max-width: none;
+  padding-block: 0.5rem;
+  color: #495057;
+  font-size: 1.125rem;
+  line-height: 1.7;
+}
+
+.spark-homepage-intro h2 {
+  margin: 0 0 1rem;
+  color: #212529;
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 600;
+  line-height: 1.25;
+  text-transform: none;
+}
+
+.spark-homepage-intro p:last-child {
+  margin-bottom: 0;
+}
+
+.spark-homepage-pillars,
+.spark-homepage-pillars .sub-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.spark-homepage-pillars {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.5rem;
+}
+
+.spark-homepage-pillars > .menu-item {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #dee2e6;
+  border-radius: 0.5rem;
+  background: #fff;
+}
+
+.spark-pillar-heading {
+  padding: 1.5rem;
+  border-radius: 0.45rem 0.45rem 0 0;
+  background: #c0142f;
+  background: linear-gradient(150deg, #c0142f 0%, #a91229 100%);
+  color: #fff;
+}
+
+.spark-pillar-heading h2 {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  margin: 0 0 0.75rem;
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.25;
+  text-transform: none;
+}
+
+.spark-pillar-heading .spark-pillar-icon {
+  flex: 0 0 auto;
+  font-size: 1.05em;
+  line-height: inherit;
+}
+
+.spark-pillar-heading h2 > span {
+  min-width: 0;
+}
+
+.spark-pillar-heading p {
+  margin: 0;
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.spark-homepage-pillars .sub-menu {
+  position: static;
+  display: block;
+  float: none;
+  width: auto;
+  min-width: 0;
+  padding: 0.5rem 0 1rem;
+}
+
+.spark-homepage-pillars .sub-menu li {
+  margin: 0;
+  padding: 0;
+}
+
+.spark-homepage-pillars .sub-menu li + li {
+  border-top: 1px solid #e9ecef;
+}
+
+.spark-homepage-pillars .sub-menu a {
+  display: block;
+  min-height: 44px;
+  padding: 0.85rem 1.5rem;
+  color: #212529;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.4;
+  text-decoration: underline;
+  text-decoration-color: #adb5bd;
+  text-underline-offset: 0.2em;
+  overflow-wrap: anywhere;
+}
+
+.spark-homepage-pillars .sub-menu a:hover,
+.spark-homepage-pillars .sub-menu a:focus-visible {
+  background: #fff2f4;
+  color: #810001;
+  text-decoration-color: currentColor;
+}
+
+.spark-homepage-media-section .spark-homepage-media {
+  max-width: 38rem;
+}
+
+.spark-homepage-overview {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: stretch;
+  gap: 2rem;
+}
+
+.spark-homepage-overview > section {
+  min-width: 0;
+}
+
+.spark-homepage-overview .spark-homepage-media-section > h2 {
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #dee2e6;
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-transform: none;
+}
+
+.spark-homepage-overview .video-player-container {
+  aspect-ratio: auto;
+}
+
+.spark-homepage-overview .video-player {
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+
+.spark-homepage-overview video {
+  display: block;
+  border-radius: 0.375rem;
+}
+
+@media (min-width: 992px) {
+  .spark-homepage-overview-with-media {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  }
+
+  .spark-homepage-pillars {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .spark-pillar-heading {
+    min-height: 11rem;
+  }
+}
+
+/* Learning support is secondary to the three main module pillars. */
+.spark-homepage-support {
+  padding-block: 2rem 1rem;
+  border-top: 1px solid #dee2e6;
+}
+
+.spark-homepage-support > h2 {
+  margin: 0 0 1.25rem;
+  color: #212529;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.3;
+  text-transform: none;
+}
+
+.spark-homepage-support .spark-support-menu {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+}
+
+.spark-support-menu > li {
+  min-width: 0;
+}
+
+.spark-support-menu a {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.85rem;
+  padding: 1.25rem;
+  border: 1px solid #dee2e6;
+  border-radius: 0.5rem;
+  background: #fff;
+  color: #212529;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.spark-support-icon {
+  color: #a91229;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.spark-support-label {
+  text-decoration: underline;
+  text-decoration-color: #adb5bd;
+  text-underline-offset: 0.2em;
+}
+
+.spark-support-menu a:hover,
+.spark-support-menu a:focus-visible {
+  border-color: #c0142f;
+  background: #fff2f4;
+  color: #810001;
+}
+
+.spark-support-menu a:hover .spark-support-label,
+.spark-support-menu a:focus-visible .spark-support-label {
+  text-decoration-color: currentColor;
+}
+
+.spark-homepage-footer {
+  padding-block: 1.25rem;
+  border-top: 1px solid #e9ecef;
+}
+
+.spark-homepage-footer .spark-homepage-links-secondary {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.spark-homepage-footer .spark-link-menu {
+  gap: 0.25rem 1.25rem;
+}
+
+.spark-homepage-footer .spark-link-menu > li + li {
+  margin-left: 0;
+  padding-left: 0;
+  border-left: 0;
+}
+
+.spark-homepage-footer .spark-link-menu-secondary a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding-block: 0.5rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.spark-homepage-footer .spark-learning-commons {
+  flex: 0 0 auto;
+  padding-block: 0.5rem;
+}
+
+@media (min-width: 576px) {
+  .spark-homepage-support .spark-support-menu {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1200px) {
+  .spark-homepage-support .spark-support-menu {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
