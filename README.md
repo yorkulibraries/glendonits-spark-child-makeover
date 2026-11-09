@@ -68,6 +68,13 @@ page metadata; the template does not create or change the field.
 
 ## Scope
 
+For a module-page layout experiment, select **SPARK Lesson — Right Resources
+(Test)** in the page editor's Template setting. Its `page-rightsidebar.php`
+template uses Bootstrap's responsive 8/4 grid within the lesson area, placing
+resources to the right from 1200px upward and below the lesson on smaller
+screens. Pages without resources use the full lesson width. It reuses the
+existing language-specific resource fields; the default `page.php` is unchanged.
+
 The homepage, site map, and `spark_topic` module pages have child-theme
 templates; other inherited SPARK pages still use the parent's existing layout
 and assets until they are specifically migrated in the child.

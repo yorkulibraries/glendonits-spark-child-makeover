@@ -361,7 +361,7 @@ body textarea {
 .spark-module-navigation {
   overflow: visible;
   border: 1px solid #dee2e6;
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   background: #fff;
 }
 
@@ -370,7 +370,7 @@ body textarea {
   align-items: flex-start;
   gap: 0.75rem;
   padding: 1.25rem;
-  border-radius: 0.45rem 0.45rem 0 0;
+  border-radius: 1rem 1rem 0 0;
   background: linear-gradient(150deg, #c0142f 0%, #a91229 100%);
   color: #fff;
 }
@@ -434,7 +434,7 @@ body textarea {
 
 .spark-module-menu > .menu-item:last-child {
   border-bottom: 0;
-  border-radius: 0 0 0.45rem 0.45rem;
+  border-radius: 0 0 1rem 1rem;
 }
 
 .spark-module-menu .menu-item > a {
@@ -586,6 +586,11 @@ body textarea {
   line-height: 1.25;
 }
 
+.spark-module-content > h1 {
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--bs-primary, #e31837);
+}
+
 .spark-module-content h2,
 .spark-module-content h3,
 .spark-module-content h4 {
@@ -626,6 +631,13 @@ body textarea {
   clear: both;
 }
 
+div .accordion {
+  border-radius: 10px 10px 10px;
+  background: linear-gradient(150deg, #c0142f 0%, #a91229 100%);
+  background: -webkit-linear-gradient(top, #c0142f, #a91229);
+}
+
+
 .spark-module-resources {
   float: none;
   width: 100%;
@@ -641,8 +653,9 @@ body textarea {
 
 .spark-module-resources .card-header {
   margin: 0 0 0.5rem;
-  padding: 0;
+  padding: 0 0 0.75rem;
   border: 0;
+  border-bottom: 2px solid var(--bs-primary, #e31837);
   background: transparent;
   color: #212529;
   font-size: 1.15rem;
@@ -665,6 +678,16 @@ body textarea {
 
 .spark-module-resources a {
   display: block;
+}
+
+/* Experimental right-resources page template only. */
+.spark-module-rightsidebar-page .spark-module-resources {
+  margin-top: 0;
+  padding: 1.25rem;
+}
+
+.spark-module-rightsidebar-page .spark-lesson-resources-column {
+  min-width: 0;
 }
 
 .spark-module-content img,
@@ -1284,13 +1307,13 @@ body textarea {
   margin: 0;
   padding: 0;
   border: 1px solid #dee2e6;
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   background: #fff;
 }
 
 .spark-pillar-heading {
   padding: 1.5rem;
-  border-radius: 0.45rem 0.45rem 0 0;
+  border-radius: 1rem 1rem 0 0;
   background: #c0142f;
   background: linear-gradient(150deg, #c0142f 0%, #a91229 100%);
   color: #fff;
@@ -1344,7 +1367,9 @@ body textarea {
 }
 
 .spark-homepage-pillars .sub-menu a {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
   min-height: 44px;
   padding: 0.85rem 1.5rem;
   color: #212529;
@@ -1355,6 +1380,17 @@ body textarea {
   text-decoration-color: #adb5bd;
   text-underline-offset: 0.2em;
   overflow-wrap: anywhere;
+}
+
+.spark-homepage-pillars .spark-pillar-module-label {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.spark-homepage-pillars .spark-pillar-module-arrow {
+  flex: 0 0 auto;
+  color: #a91229;
+  font-size: 0.9em;
 }
 
 .spark-homepage-pillars .sub-menu a:hover,
@@ -1461,6 +1497,19 @@ body textarea {
   color: #a91229;
   font-size: 1.5rem;
   line-height: 1;
+}
+
+.spark-support-menu .spark-external-link > a {
+  position: relative;
+  padding-right: 2.75rem;
+}
+
+.spark-support-external-arrow {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  color: #a91229;
+  font-size: 0.95rem;
 }
 
 .spark-support-label {

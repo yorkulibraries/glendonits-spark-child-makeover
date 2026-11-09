@@ -157,6 +157,16 @@ function spark_makeover_homepage_pillar_heading( $output, $item, $depth, $args )
 }
 add_filter( 'walker_nav_menu_start_el', 'spark_makeover_homepage_pillar_heading', 10, 4 );
 
+/** Give homepage module links a decorative forward cue. */
+function spark_makeover_homepage_module_link_title( $title, $item, $args, $depth ) {
+    if ( empty( $args->spark_makeover_pillars ) || $depth < 1 ) {
+        return $title;
+    }
+
+    return '<span class="spark-pillar-module-label">' . $title . '</span><i class="fa fa-arrow-right spark-pillar-module-arrow" aria-hidden="true"></i>';
+}
+add_filter( 'nav_menu_item_title', 'spark_makeover_homepage_module_link_title', 10, 4 );
+
 /** Add decorative icons while preserving the CMS-managed support links. */
 function spark_makeover_support_link_title( $title, $item, $args, $depth ) {
     if ( empty( $args->spark_makeover_support ) ) {
@@ -185,7 +195,13 @@ function spark_makeover_support_link_title( $title, $item, $args, $depth ) {
 
     // Remove legacy forced line breaks; let each card wrap naturally.
     $label = wp_strip_all_tags( preg_replace( '/<br\s*\/?\s*>/i', ' ', $title ) );
+    $external_indicator = '';
+    if ( in_array( 'spark-external-link', (array) $item->classes, true ) ) {
+        $external_label = isset( $_SESSION['slang'] ) && 'fr' === $_SESSION['slang'] ? '(site externe)' : '(external site)';
+        $external_indicator = '<i class="fa fa-external-link spark-support-external-arrow" aria-hidden="true"></i>'
+            . '<span class="visually-hidden"> ' . esc_html( $external_label ) . '</span>';
+    }
     return '<span class="spark-support-icon" aria-hidden="true"><i class="fa ' . esc_attr( $icon ) . '"></i></span>'
-        . '<span class="spark-support-label">' . esc_html( $label ) . '</span>';
+        . '<span class="spark-support-label">' . esc_html( $label ) . '</span>' . $external_indicator;
 }
 add_filter( 'nav_menu_item_title', 'spark_makeover_support_link_title', 10, 4 );
