@@ -14,7 +14,6 @@ if ( ! glendonits_spark_is_bootstrap5_page() ) {
 
 $spark_language = isset( $_SESSION['slang'] ) && 'fr' === $_SESSION['slang'] ? 'fr' : 'en';
 $is_french      = 'fr' === $spark_language;
-$york_theme_uri = get_theme_root_uri() . '/york2020';
 ?>
 <footer id="footer" class="mt-auto bg-primary spark-york-footer">
 	<div class="container spark-york-footer-content pt-5">
@@ -22,7 +21,7 @@ $york_theme_uri = get_theme_root_uri() . '/york2020';
 			<div class="col-md-3 mb-3 mb-md-0">
 				<a href="https://www.yorku.ca/">
 					<img
-						src="<?php echo esc_url( $york_theme_uri . '/images/yorkraptorsfooterlogo.png' ); ?>"
+						src="https://www.library.yorku.ca/web/wp-content/themes/york2020/images/yorku-logo-ko.png"
 						alt="<?php echo esc_attr( $is_french ? 'Université York' : 'York University' ); ?>"
 						class="spark-york-footer-logo"
 					>
