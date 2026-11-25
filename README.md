@@ -68,12 +68,16 @@ page metadata; the template does not create or change the field.
 
 ## Scope
 
-For a module-page layout experiment, select **SPARK Lesson — Right Resources
-(Test)** in the page editor's Template setting. Its `page-rightsidebar.php`
-template uses Bootstrap's responsive 8/4 grid within the lesson area, placing
+Module pages use **SPARK Lesson — Right Resources** by default. The default
+`page.php` delegates to `page-rightsidebar.php`, which also remains selectable
+in the editor for pages already assigned to it. Its Bootstrap 8/4 grid places
 resources to the right from 1200px upward and below the lesson on smaller
-screens. Pages without resources use the full lesson width. It reuses the
-existing language-specific resource fields; the default `page.php` is unchanged.
+screens. Pages without resources use the full lesson width.
+
+To place resources below the lesson at every screen size, select **SPARK
+Lesson — Bottom Resources** in the page editor's Template setting. This uses
+`page-bottomresources.php`. Both layouts reuse the existing language-specific
+resource fields.
 
 The homepage, site map, and `spark_topic` module pages have child-theme
 templates; other inherited SPARK pages still use the parent's existing layout

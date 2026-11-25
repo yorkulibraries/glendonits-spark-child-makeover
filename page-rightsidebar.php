@@ -1,9 +1,9 @@
 <?php
 /**
- * Template Name: SPARK Lesson — Right Resources (Test)
+ * Template Name: SPARK Lesson — Right Resources
  * Template Post Type: page
  *
- * Experimental module layout with a Bootstrap 5 resources column.
+ * Default module layout with a Bootstrap 5 resources column.
  *
  * Pages without spark_topic retain the parent theme's existing template.
  *
@@ -88,6 +88,7 @@ $video_file   = get_field( 'video_file_' . $spark_language, $page_id );
 $caption_file = get_field( 'video_file_captions_' . $spark_language, $page_id );
 $mp4_file     = get_field( 'video_file_mac_' . $spark_language, $page_id );
 $transcript   = spark_get_transcript( $page_id, $spark_language );
+$progress = max( 0, min( 100, (int) get_field( 'percent_completed', $page_id ) ) );
 $module_content = '';
 
 if ( $is_french ) {
@@ -143,7 +144,7 @@ get_header();
 					<?php echo esc_html( $is_french ? 'Sommaire des modules' : 'Module contents' ); ?>
 				</button>
 				<div class="spark-module-navigation collapse" id="spark-module-menu-collapse">
-					<div class="spark-module-stage-heading">
+					<div class="spark-module-stage-heading<?php echo 'faculty' === $module_group['menu'] ? ' spark-module-stage-heading-faculty' : ''; ?>">
 						<i class="fa <?php echo esc_attr( $stage_icon ); ?>" aria-hidden="true"></i>
 						<h2><?php echo esc_html( $module_group['title'] ); ?></h2>
 					</div>
@@ -220,6 +221,16 @@ get_header();
 							</aside>
 						</div>
 					<?php endif; ?>
+				</div>
+
+				<div class="spark-module-progress mt-5">
+					<div class="d-flex justify-content-between mb-1">
+						<span><?php echo esc_html( $is_french ? 'Progression' : 'Progress' ); ?></span>
+						<span><?php echo esc_html( $progress . '%' ); ?></span>
+					</div>
+					<div class="progress" role="progressbar" aria-label="<?php echo esc_attr( $is_french ? 'Progression du module' : 'Module progress' ); ?>" aria-valuenow="<?php echo esc_attr( $progress ); ?>" aria-valuemin="0" aria-valuemax="100">
+						<div class="progress-bar bg-primary" style="width: <?php echo esc_attr( $progress ); ?>%"></div>
+					</div>
 				</div>
 
 				<div class="spark-module-page-controls">

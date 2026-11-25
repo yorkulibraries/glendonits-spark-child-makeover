@@ -63,8 +63,7 @@ get_header();
 		$has_media    = $video_file || '' !== trim( wp_strip_all_tags( $transcript ) );
 		?>
 
-		<div class="spark-homepage-overview mb-5<?php echo $has_media ? ' spark-homepage-overview-with-media' : ''; ?>">
-		<section class="spark-homepage-intro bg-light p-3" aria-label="<?php echo esc_attr( $is_french ? 'Présentation de SPARK' : 'About SPARK' ); ?>">
+		<section class="spark-homepage-intro bg-light p-3 mb-5" aria-label="<?php echo esc_attr( $is_french ? 'Présentation de SPARK' : 'About SPARK' ); ?>">
 			<div class="spark-homepage-copy">
 				<?php if ( $is_french ) : ?>
 					<?php
@@ -84,22 +83,6 @@ get_header();
 			</div>
 		</section>
 
-		<?php if ( $has_media ) :
-			?>
-			<section class="spark-homepage-media-section" aria-labelledby="spark-homepage-video-title">
-				<h2 id="spark-homepage-video-title" class="h4 mb-3"><?php echo esc_html( $is_french ? 'Découvrir SPARK' : 'Discover SPARK' ); ?></h2>
-				<div class="spark-homepage-media">
-					<?php
-					if ( $video_file ) {
-						echo spark_video_widget( $page_id, $parent_uri, $video_file, $caption_file, $mp4_file, ! is_null( $transcript ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-					}
-					echo $transcript; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-					?>
-				</div>
-			</section>
-		<?php endif; ?>
-
-		</div>
 
 		<?php
 		$primary_location = $is_french ? 'homepage-fr' : 'homepage';
@@ -126,8 +109,9 @@ get_header();
 		$grey_location = $is_french ? 'homepage-bottom-navbar-grey-fr' : 'homepage-bottom-navbar-grey';
 		?>
 
+		<div class="spark-homepage-secondary mt-4 mt-lg-5<?php echo $has_media && has_nav_menu( $red_location ) ? ' spark-homepage-secondary-with-media' : ''; ?>">
 		<?php if ( has_nav_menu( $red_location ) ) : ?>
-			<section class="spark-homepage-support mt-4 mt-lg-5" aria-labelledby="spark-homepage-support-title">
+			<section class="spark-homepage-support" aria-labelledby="spark-homepage-support-title">
 				<h2 id="spark-homepage-support-title"><?php echo esc_html( $is_french ? 'Besoin d’aide supplémentaire ?' : 'Need more help?' ); ?></h2>
 			<nav aria-label="<?php echo esc_attr( $is_french ? 'Services de soutien à l’apprentissage' : 'Learning support services' ); ?>">
 				<?php
@@ -145,6 +129,22 @@ get_header();
 			</nav>
 			</section>
 		<?php endif; ?>
+
+		<?php if ( $has_media ) :
+			?>
+			<section class="spark-homepage-media-section" aria-labelledby="spark-homepage-video-title">
+				<h2 id="spark-homepage-video-title" class="h4 mb-3"><?php echo esc_html( $is_french ? 'Découvrir SPARK' : 'Discover SPARK' ); ?></h2>
+				<div class="spark-homepage-media">
+					<?php
+					if ( $video_file ) {
+						echo spark_video_widget( $page_id, $parent_uri, $video_file, $caption_file, $mp4_file, ! is_null( $transcript ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					}
+					echo $transcript; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					?>
+				</div>
+			</section>
+		<?php endif; ?>
+		</div>
 
 		<div class="spark-homepage-footer d-flex flex-column flex-lg-row align-items-lg-center justify-content-between gap-3 mt-3">
 			<?php if ( has_nav_menu( $grey_location ) ) : ?>
