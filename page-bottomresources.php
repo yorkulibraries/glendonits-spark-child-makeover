@@ -114,7 +114,7 @@ if ( preg_match( '/<h1\b[^>]*>.*?<\/h1>/is', $module_content, $heading_match ) )
 get_header();
 ?>
 
-<main id="main-content" class="container py-4 spark-module-page" lang="<?php echo esc_attr( $spark_language ); ?>">
+<main id="main-content" class="container py-4 spark-module-page<?php echo 'faculty' === $module_group['menu'] ? ' spark-module-faculty-page' : ''; ?>" lang="<?php echo esc_attr( $spark_language ); ?>">
 			<header class="spark-module-branding d-flex flex-column flex-sm-row align-items-sm-center justify-content-between gap-3 mb-4">
 				<a class="spark-module-logo" href="<?php echo esc_url( $spark_home_url ); ?>">
 					<img

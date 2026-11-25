@@ -913,6 +913,32 @@ div .accordion {
   color: #fff;
 }
 
+/* Match Faculty Guide navigation to its blue sidebar header. */
+.spark-module-faculty-page .spark-module-page-controls .content-bottom-navigation-page-controls > a {
+  border-color: #343462;
+  color: #252544;
+}
+
+.spark-module-faculty-page .spark-module-page-controls .content-bottom-navigation-page-controls > a:hover,
+.spark-module-faculty-page .spark-module-page-controls .content-bottom-navigation-page-controls > a:focus-visible,
+.spark-module-faculty-page .spark-module-page-controls .content-bottom-navigation-page-controls > a:active {
+  border-color: #252544;
+  background: #eeeef5;
+  color: #252544;
+}
+
+.spark-module-faculty-page .spark-module-page-controls .content-bottom-navigation-page-controls > .content-bottom-next-button {
+  background: linear-gradient(to bottom, #252544 0%, #343462 100%);
+  color: #fff;
+}
+
+.spark-module-faculty-page .spark-module-page-controls .content-bottom-navigation-page-controls > .content-bottom-next-button:hover,
+.spark-module-faculty-page .spark-module-page-controls .content-bottom-navigation-page-controls > .content-bottom-next-button:focus-visible,
+.spark-module-faculty-page .spark-module-page-controls .content-bottom-navigation-page-controls > .content-bottom-next-button:active {
+  background: #252544;
+  color: #fff;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .spark-module-page-controls .content-bottom-navigation-page-controls > a {
     transition: none;
@@ -1416,6 +1442,11 @@ div .accordion {
   text-decoration-color: currentColor;
 }
 
+/* Retain Discover SPARK in the template for future use. */
+.spark-homepage .spark-homepage-media-section {
+  display: none;
+}
+
 .spark-homepage-media-section .spark-homepage-media {
   max-width: 38rem;
 }
@@ -1460,10 +1491,6 @@ div .accordion {
 }
 
 @media (min-width: 992px) {
-  .spark-homepage-secondary-with-media {
-    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
-  }
-
   .spark-homepage-pillars {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -1595,9 +1622,6 @@ div .accordion {
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 
-  .spark-homepage-secondary-with-media .spark-support-menu {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
 }
 
 

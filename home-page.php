@@ -63,7 +63,7 @@ get_header();
 		$has_media    = $video_file || '' !== trim( wp_strip_all_tags( $transcript ) );
 		?>
 
-		<section class="spark-homepage-intro bg-light p-3 mb-5" aria-label="<?php echo esc_attr( $is_french ? 'Présentation de SPARK' : 'About SPARK' ); ?>">
+		<section class="spark-homepage-intro p-3 mb-5" aria-label="<?php echo esc_attr( $is_french ? 'Présentation de SPARK' : 'About SPARK' ); ?>">
 			<div class="spark-homepage-copy">
 				<?php if ( $is_french ) : ?>
 					<?php
@@ -109,7 +109,7 @@ get_header();
 		$grey_location = $is_french ? 'homepage-bottom-navbar-grey-fr' : 'homepage-bottom-navbar-grey';
 		?>
 
-		<div class="spark-homepage-secondary mt-4 mt-lg-5<?php echo $has_media && has_nav_menu( $red_location ) ? ' spark-homepage-secondary-with-media' : ''; ?>">
+		<div class="spark-homepage-secondary mt-4 mt-lg-5">
 		<?php if ( has_nav_menu( $red_location ) ) : ?>
 			<section class="spark-homepage-support" aria-labelledby="spark-homepage-support-title">
 				<h2 id="spark-homepage-support-title"><?php echo esc_html( $is_french ? 'Besoin d’aide supplémentaire ?' : 'Need more help?' ); ?></h2>
